@@ -2,6 +2,16 @@ package oop.inheritance.ingenico;
 
 public class IngenicoPrinter {
 
+    private IngenicoPrinter(){}
+
+    private static class PrinterHolder{
+        private static final IngenicoPrinter INSTANCE = new IngenicoPrinter();
+    }
+
+    public static IngenicoPrinter getInstance(){
+        return PrinterHolder.INSTANCE;
+    }
+
     /**
      * Prints a message on the current line at the specified horizontal position
      *
