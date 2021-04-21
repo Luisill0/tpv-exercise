@@ -2,6 +2,16 @@ package oop.inheritance.verifone.vx520;
 
 public class VerifoneVx520Ethernet {
 
+    private VerifoneVx520Ethernet(){}
+
+    private static class EthernetHolder{
+        private static final VerifoneVx520Ethernet INSTANCE = new VerifoneVx520Ethernet();
+    }
+
+    public static VerifoneVx520Ethernet getInstance(){
+        return EthernetHolder.INSTANCE;
+    }
+
     /**
      * Opens a connection using the ethernet device
      *

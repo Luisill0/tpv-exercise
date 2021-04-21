@@ -1,6 +1,17 @@
 package oop.inheritance.verifone.v240m;
 
 public class VerifoneV240mGPS {
+
+    private VerifoneV240mGPS(){}
+
+    private static class GPSHolder{
+        private static final VerifoneV240mGPS INSTANCE = new VerifoneV240mGPS();
+    }
+
+    public static VerifoneV240mGPS getInstance(){
+        return GPSHolder.INSTANCE;
+    }
+
     /**
      * Opens a connection using the GPS device
      *

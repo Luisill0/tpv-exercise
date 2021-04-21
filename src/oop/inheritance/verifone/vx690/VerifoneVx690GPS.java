@@ -1,6 +1,17 @@
 package oop.inheritance.verifone.vx690;
 
 public class VerifoneVx690GPS {
+
+    private VerifoneVx690GPS(){}
+
+    private static class GPSHolder{
+        private static final VerifoneVx690GPS INSTANCE = new VerifoneVx690GPS();
+    }
+
+    public static VerifoneVx690GPS getInstance(){
+        return GPSHolder.INSTANCE;
+    }
+
     /**
      * Opens a connection using the GPS device
      *

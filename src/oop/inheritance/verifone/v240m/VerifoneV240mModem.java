@@ -2,6 +2,16 @@ package oop.inheritance.verifone.v240m;
 
 public class VerifoneV240mModem {
 
+    private VerifoneV240mModem(){}
+
+    private static class ModemHolder{
+        private static final VerifoneV240mModem INSTANCE = new VerifoneV240mModem();
+    }
+
+    public static VerifoneV240mModem getInstance(){
+        return ModemHolder.INSTANCE;
+    }
+
     /**
      * Opens a connection using the modem device
      *
